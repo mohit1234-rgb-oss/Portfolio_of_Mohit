@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Lovely Family</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* 🔥 UPDATED: Modern gradient background */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* 🔥 UPDATED: Glass header */
+header {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header h1 {
+    font-size: 40px;
+    color: #00ffff;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-style: italic;
+    color: #ddd;
+}
+
+/* 🔥 UPDATED: Sticky navbar */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+section {
+    padding: 40px 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+/* 🔥 UPDATED: Card design */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #00ffff;
+}
+
+/* 🔥 UPDATED: Image style */
+img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00ffff;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    color: #00ffff;
+    text-align: center;
+}
+
+/* 🔥 NEW: Grid layout for members */
+.members-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* 🔥 UPDATED: Footer */
+footer {
+    background: linear-gradient(90deg, #111, #222);
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+}
+
+/* 🔥 NEW: Animation */
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);} 
+    to {opacity:1; transform: translateY(0);} 
+}
+
+/* 🔥 NEW: Responsive */
+@media (max-width:600px){
+    img { width:150px; height:150px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MOHITKUMAR ARVIND SINHA</h1>
+    <h2>🌟 MY LOVELY FAMILY 🌟</h2>
+    <p>"Family is not an important thing, it is everything."</p>
+    <p>"Where there is family, there is love, strength, and blessings."</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#members">Family Members</a>
+    <a href="#history">History</a>
+    <a href="#festival">Festivals</a>
+    <a href="#proud">Proud Moments</a>
+</nav>
+
+<section id="familytree">
+  <h2>Family Tree</h2>
+  <div class="card">
+    <img src="IMG-20260314-WA0000.jpg">
+  </div>
+</section>
+
+<section id="about">
+    <h2>Introduction</h2>
+    <div class="card">
+        <p>Hello everyone! Welcome to my family webpage. My family is my biggest strength and inspiration ❤️</p>
+    </div>
+</section>
+
+<section id="members">
+    <h2>Family Members</h2>
+    <div class="members-container">
+
+    <div class="card">
+        <h3>👦 About Me</h3>
+        <img src="IMG_20250616_102035.png">
+        <p>Mohitkumar Arvind Sinha</p>
+        <p>B.Tech Student | Tech Lover 🚀</p>
+    </div>
+
+    <div class="card">
+        <h3>👴 Grandfather</h3>
+        <img src="12x18-1.JPG">
+        <p>Former Mukhiya & Farmer</p>
+    </div>
+
+    <div class="card">
+        <h3>👵 Grandmother</h3>
+        <img src="IMG-20260302-WA0009.jpg">
+        <p>Heart of Village Home ❤️</p>
+    </div>
+
+    <div class="card">
+        <h3>👨 Father</h3>
+        <img src="IMG_20210329_163126~2.jpg">
+        <p>Hardworking & Inspiring 💪</p>
+    </div>
+
+    <div class="card">
+        <h3>👩 Mother</h3>
+        <img src="-1962911326.0.jpg">
+        <p>Pure Love & Care ❤️</p>
+    </div>
+
+    <div class="card">
+        <h3>👧 Sister</h3>
+        <img src="IMG_20220626_205822.jpg">
+        <p>Brilliant Student 🎓</p>
+    </div>
+
+    </div>
+</section>
+
+<section id="history">
+    <h2>Family History</h2>
+    <div class="card">
+        <p>Our roots are from Bihar 🌾</p>
+        <p>Now living in Pune for education and growth 📚</p>
+    </div>
+</section>
+
+<section id="festival">
+    <h2>Festivals & Traditions</h2>
+    <div class="card">
+        <h3>🌞 Chhath Puja</h3>
+        <p>Dedicated to Sun God 🌅</p>
+        <img src="661880_0eb52eec-3765-46a5-8d25-208db6d44c83_lg.png">
+
+        <h3>🍲 Litti Chokha</h3>
+        <img src="litti-chokha-1.jpg" style="border-radius:10px;">
+        <p>Traditional and delicious food of Bihar 😋</p>
+    </div>
+</section>
+
+<section id="proud">
+    <h2>Proud Moments</h2>
+    <div class="card">
+        <p>✔ Grandfather was Mukhiya</p>
+        <p>✔ Academic achievements in family</p>
+        <p>✔ Strong cultural values</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 My Lovely Family | Designed with ❤️ by Mohit
+    <p>
+  <a href ="#">Back to top</a>
+</p>
+</footer>
+
+</body>
+</html>
