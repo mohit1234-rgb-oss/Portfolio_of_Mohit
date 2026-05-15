@@ -1,224 +1,867 @@
+/* ============================================================
+   MODERN LIGHT PORTFOLIO STYLESHEET
+   Soft White · Sky Blue · Slate
+   Clean Glassmorphism UI
+   ============================================================ */
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohitkumar Sinha | Portfolio</title>
-    
-    <!-- Google Fonts for Professional Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
 
-    <!-- STICKY NAVIGATION BAR -->
-    <nav class="navbar">
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#languages">Languages</a>
-        <a href="#contact">Contact</a>
-    </nav>
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+    --bg-base:        #f4f7fb;
+    --bg-layer:       #ffffff;
+    --bg-alt:         #eef4ff;
 
-    <!-- 1. HERO / LANDING -->
-    <section id="hero" class="hero-section">
-        <img src="IMG-20260301-WA0076.jpg" alt="My Profile" class="profile-img">
-        <h1>MOHITKUMAR SINHA</h1>
-        <p class="subtitle">Computer Engineering Student</p>
-        <a href="#about" class="btn">Enter Portfolio</a>
-    </section>
+    --accent:         #3b82f6;
+    --accent-soft:    rgba(59, 130, 246, 0.12);
+    --accent-glow:    rgba(59, 130, 246, 0.22);
 
-    <!-- 2. ABOUT ME & VIDEO -->
-    <section id="about">
-        <h2>02. About Me</h2>
-        <div class="glass-card">
-            <p>Motivated 1st year B.Tech Computer Science student passionate about programming, robotics, and innovation. Focused on building real-world projects, improving problem-solving skills, and achieving financial independence. Seeking internships and growth opportunities to contribute to impactful tech solutions.</p>
-            
-            <div class="video-wrapper">
-                <video controls poster="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600">
-                    <source src="Record_2026-05-03-22-09-32_e3c1f266f17b29c7b40472751f031275.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
+    --text-primary:   #0f172a;
+    --text-secondary: #334155;
+    --text-muted:     #64748b;
 
-    <!-- 3. DOWNLOAD RESUME -->
-    <section id="resume">
-        <h2>03. Resume</h2>
-        <div class="glass-card">
-            <p>Ready to look at the details? Download my complete professional resume below.</p>
-            <div class="btn-group">
-                <a href="IMG-20260326-WA0005.jpg" class="btn" download>📥 Download PDF</a>
-                <a href="IMG-20260326-WA0005.jpg" target="_blank" class="btn btn-secondary">👁️ View Resume</a>
-            </div>
-        </div>
-    </section>
+    --border-soft:    rgba(15, 23, 42, 0.08);
+    --border-accent:  rgba(59, 130, 246, 0.35);
 
-    <!-- 4. SKILLS -->
-    <section id="skills">
-        <h2>04. Tech & Soft Skills</h2>
-        <div class="glass-card">
-            <h3>Technical Skills</h3>
-            <div class="tag-container">
-                <span class="tag">HTML5</span>
-                <span class="tag">C (Basics)</span>
-                <span class="tag">Linux (Basics)</span>
-                <span class="tag">AI Tools Uses</span>
-                <span class="tag">Python (Intermediate)</span>
-                <span class="tag">Data Visualization Tools (Orange, Tableau)</span>
-                <span class="tag">Cybersecurity (Basics)</span>
-            </div>
-            
-            <h3 class="mt-20">Soft Skills</h3>
-            <div class="tag-container">
-                <span class="tag">Teamwork</span>
-                <span class="tag">Time Management</span>
-                <span class="tag">Leadership</span>
-                <span class="tag">Effective Communication</span>
-                <span class="tag">Critical Thinking</span>
-            </div>
-        </div>
-    </section>
+    --card-bg:        rgba(255, 255, 255, 0.72);
+    --card-hover-bg:  rgba(255, 255, 255, 0.92);
 
-    <!-- 5. PROJECTS -->
-    <section id="projects">
-        <h2>05. Projects</h2>
-        
-        <div class="glass-card">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500" alt="Banking Management System" class="project-img">
-            <h3>Banking Management System</h3>
-            <p class="small-text">Linux mini project -- Banking Management System (created in a team of 4 members).</p>
-        </div>
+    --shadow-card:    0 10px 30px rgba(15, 23, 42, 0.08);
 
-        <div class="glass-card">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500" alt="Fitness Website" class="project-img">
-            <h3>Fitness Website</h3>
-            <p class="small-text">A fitness website which tells you how much you should eat and what to eat.</p>
-            <a href="https://nutrihealth1.lovable.app" target="_blank" class="btn btn-secondary">Link to website</a>
-        </div>
+    --radius-card:    20px;
+    --radius-btn:     50px;
+    --radius-input:   12px;
 
-        <div class="glass-card">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500" alt="Family Website" class="project-img">
-            <h3>My Family Website</h3>
-            <p class="small-text">My family website created using HTML.</p>
-            <a href="index12.html" target="_blank" class="btn btn-secondary">Link to website</a>
-        </div>
-    </section>
+    --navbar-h:       70px;
 
-    <!-- 6. EDUCATION -->
-    <section id="education">
-        <h2>06. Education</h2>
-        <div class="glass-card">
-            <p class="mb-20">
-                <strong>Bachelor of Technology</strong><br>
-                <span class="light-text">MIT Academy of Engineering | 2025 - 2029</span>
-            </p>
-            <p>
-                <strong>Higher Secondary Education</strong><br>
-                <span class="light-text">Orchid Junior College | 11th and 12th | 2023 - 2025</span>
-            </p>
-        </div>
-    </section>
+    --font-main: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    <!-- 7. CERTIFICATIONS -->
-    <section id="certifications">
-        <h2>07. Certifications</h2>
-        <div class="glass-card">
-            <ul class="cert-list">
-                <li>
-                    <strong>Claude 101 Course</strong>
-                    <a href="Screenshot_2026-03-31-21-30-06-719_com.google.android.apps.docs~2.jpg" target="_blank" class="btn btn-secondary">👁️ View</a>
-                </li>
-                <li>
-                    <strong>Introduction To Kali Linux</strong>
-                    <a href="css-certificate.pdf" target="_blank" class="btn btn-secondary">👁️ View</a>
-                </li>
-                <li>
-                    <strong>Modern AI</strong>
-                    <a href="Introduction_to_Modern_AI_certificate_202501100066-mitaoe-ac-in_62ea8976-6378-4ba3-b4d9-7337aa569aaa (1).pdf" target="_blank" class="btn btn-secondary">👁️ View</a>
-                </li>
-                <li>
-                    <strong>Python Essentials 1 & 2</strong>
-                    <div class="btn-group-small">
-                        <a href="IMG_20260503_214852.jpg" target="_blank" class="btn btn-secondary">👁️ View Part 1</a>
-                        <a href="IMG_20260503_214832.jpg" target="_blank" class="btn btn-secondary">👁️ View Part 2</a> 
-                    </div>
-                </li>
-                <li>
-                    <strong>Career Management Essentials</strong>
-                    <a href="Screenshot_2026-03-18-11-23-59-291_com.google.android.apps.docs~2.jpg" target="_blank" class="btn btn-secondary">👁️ View</a>
-                </li>
-                <li>
-                    <strong>IYMC Qualification</strong>
-                    <a href="IMG_20260503_214806.jpg" target="_blank" class="btn btn-secondary">👁️ View</a>
-                </li>
-                <li>
-                    <strong>Claude AI Fluency and Framework</strong>
-                    <a href="#" target="_blank" class="btn btn-secondary">👁️ View</a>
-                </li>
-            </ul>
-        </div>
-    </section>
 
-    <!-- 8. HOBBIES -->
-    <section id="hobbies">
-        <h2>08. Hobbies & Interests</h2>
-        <div class="glass-card">
-            <div class="tag-container">
-                <span class="tag">🎮 Sports (Soccer, Badminton, Cricket)</span>
-                <span class="tag">🎧 Music Listening</span>
-                <span class="tag">📸 Photography</span>
-                <span class="tag">👨‍🏫 Teaching</span>
-                <span class="tag">🧘‍♂️ Spiritual and Moral Learning</span>
-                <span class="tag">💻 Technology</span>
-                <span class="tag">🍳 Cooking</span>
-            </div>
-        </div>
-    </section>
+/* ============================================================
+   RESET & GLOBALS
+   ============================================================ */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-h);
+}
 
-    <!-- 9. LANGUAGES -->
-    <section id="languages">
-        <h2>09. Languages</h2>
-        <div class="glass-card">
-            <div class="tag-container">
-                <span class="tag tag-outline">English (Fluent)</span>
-                <span class="tag tag-outline">Hindi (Fluent)</span>
-                <span class="tag tag-outline">Angika (Native)</span>
-                <span class="tag tag-outline">Marathi (Intermediate)</span>
-                <span class="tag tag-outline">Bhojpuri (Intermediate)</span>
-            </div>
-        </div>
-    </section>
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- 10. CONTACT SECTION -->
-    <section id="contact">
-        <h2>10. Contact</h2>
-        <div class="glass-card">
-            <p class="mb-20">Let's collaborate! Send me a message and I'll get back to you.</p>
-            <form action="#">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn w-100">Send Message</button>
-            </form>
-        </div>
-    </section>
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
 
-    <!-- COPYRIGHT FOOTER -->
-    <footer>
-        <p>Copyright &copy; 2026 MOHITKUMAR SINHA.</p>
-        <p class="mb-20">All Rights Reserved.</p>
-        <a href="#hero" class="back-to-top">⬆ Back to Top</a>
-    </footer>
+    line-height: 1.7;
+    text-align: center;
 
-</body>
-</html>
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   ANIMATED BACKGROUND
+   ============================================================ */
+@keyframes lightPan {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body::before {
+    content: '';
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            -45deg,
+            #f8fbff,
+            #eef4ff,
+            #f5f9ff,
+            #edf6ff
+        );
+
+    background-size: 400% 400%;
+    animation: lightPan 18s ease infinite;
+}
+
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--navbar-h);
+
+    background: rgba(255, 255, 255, 0.75);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 6px;
+
+    z-index: 1000;
+}
+
+.nav-link {
+    text-decoration: none;
+
+    color: var(--text-secondary);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    padding: 8px 16px;
+
+    border-radius: var(--radius-btn);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+section {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: calc(var(--navbar-h) + 60px) 6% 80px;
+
+    min-height: 100vh;
+}
+
+.hero-section {
+    padding-top: calc(var(--navbar-h) + 40px);
+}
+
+section::after {
+    content: '';
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: rgba(59, 130, 246, 0.05);
+
+    filter: blur(80px);
+
+    z-index: -1;
+}
+
+
+/* ============================================================
+   SECTION BACKGROUNDS
+   ============================================================ */
+#about::before,
+#skills::before,
+#projects::before,
+#contact::before {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+#about::before {
+    background:
+        radial-gradient(
+            ellipse 80% 60% at 50% 0%,
+            rgba(59, 130, 246, 0.08) 0%,
+            transparent 70%
+        );
+}
+
+#skills::before {
+    background:
+        radial-gradient(
+            ellipse 60% 50% at 10% 100%,
+            rgba(96, 165, 250, 0.08) 0%,
+            transparent 70%
+        );
+}
+
+#projects::before {
+    background:
+        radial-gradient(
+            ellipse 70% 60% at 90% 50%,
+            rgba(59, 130, 246, 0.06) 0%,
+            transparent 70%
+        );
+}
+
+#contact::before {
+    background:
+        radial-gradient(
+            ellipse 60% 50% at 50% 100%,
+            rgba(96, 165, 250, 0.08) 0%,
+            transparent 70%
+        );
+}
+
+
+/* ============================================================
+   GLASS CARDS
+   ============================================================ */
+.glass-card {
+    background: var(--card-bg);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    border-radius: var(--radius-card);
+
+    padding: 36px 28px;
+
+    margin-bottom: 28px;
+
+    width: 100%;
+    max-width: 620px;
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--border-accent);
+
+    background: var(--card-hover-bg);
+
+    box-shadow:
+        0 18px 40px rgba(59, 130, 246, 0.10);
+}
+
+
+/* ============================================================
+   GRID LAYOUT
+   ============================================================ */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    max-width: 1050px;
+    width: 100%;
+}
+
+.grid-container .glass-card {
+    max-width: 310px;
+
+    flex: 1 1 280px;
+
+    margin-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-container .glass-card .btn-group-small {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+
+    margin-bottom: 12px;
+
+    color: #0f172a;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+
+    margin-bottom: 36px;
+
+    text-transform: uppercase;
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.glass-card h3 {
+    color: #1e293b;
+
+    margin-bottom: 12px;
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+}
+
+.subtitle {
+    color: var(--accent);
+
+    font-size: 1rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+
+    margin-bottom: 22px;
+}
+
+p {
+    color: var(--text-secondary);
+
+    margin-bottom: 14px;
+}
+
+.small-text {
+    font-size: 0.92rem;
+}
+
+.light-text {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    display: inline-block;
+
+    padding: 12px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #60a5fa
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    border-radius: var(--radius-btn);
+
+    margin-top: 14px;
+
+    border: none;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 20px rgba(59, 130, 246, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow:
+        0 16px 28px rgba(59, 130, 246, 0.28);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.btn-secondary {
+    padding: 8px 18px;
+
+    font-size: 0.82rem;
+
+    background: var(--accent-soft);
+
+    color: var(--accent);
+
+    border: 1px solid var(--border-accent);
+
+    margin-top: 0;
+}
+
+.btn-secondary:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-group {
+    display: flex;
+
+    gap: 14px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+.btn-group-small {
+    display: flex;
+
+    gap: 10px;
+
+    justify-content: center;
+
+    margin-top: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ============================================================
+   IMAGES & MEDIA
+   ============================================================ */
+.profile-img {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 4px solid rgba(255,255,255,0.9);
+
+    padding: 4px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(59, 130, 246, 0.18);
+}
+
+.project-img {
+    width: 100%;
+    height: 165px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.glass-card:hover .project-img {
+    transform: scale(1.03);
+}
+
+.video-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 56.25%;
+
+    margin-top: 24px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 36px rgba(15, 23, 42, 0.12);
+}
+
+.video-wrapper video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   TAGS & LISTS
+   ============================================================ */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.tag {
+    background: rgba(59, 130, 246, 0.10);
+
+    border: 1px solid rgba(59, 130, 246, 0.15);
+
+    padding: 5px 14px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    border-radius: 20px;
+
+    color: #2563eb;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tag:hover {
+    background: rgba(59, 130, 246, 0.16);
+
+    transform: translateY(-2px);
+}
+
+.tag-outline {
+    border-color: rgba(15, 23, 42, 0.1);
+
+    color: var(--text-primary);
+
+    background: transparent;
+}
+
+
+/* ============================================================
+   CERTIFICATIONS
+   ============================================================ */
+.cert-list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    width: 100%;
+}
+
+.cert-list li {
+    padding: 18px 22px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border-soft);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.cert-list li:hover {
+    background: rgba(255, 255, 255, 0.9);
+
+    transform: translateY(-3px);
+}
+
+.cert-list strong {
+    color: #0f172a;
+
+    font-size: 1.05rem;
+}
+
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    width: 100%;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 14px 18px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid rgba(15, 23, 42, 0.08);
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: var(--text-primary);
+
+    border-radius: var(--radius-input);
+
+    text-align: left;
+
+    font-size: 0.95rem;
+
+    font-family: var(--font-main);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--accent);
+
+    outline: none;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    padding: 36px 24px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: var(--text-muted);
+
+    font-size: 0.88rem;
+
+    margin-top: auto;
+
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+
+    line-height: 1.8;
+}
+
+
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+@media (max-width: 900px) {
+
+    .grid-container .glass-card {
+        max-width: 340px;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+    :root {
+        --navbar-h: 60px;
+    }
+
+    .navbar {
+        padding: 0 12px;
+
+        gap: 4px;
+
+        height: auto;
+
+        min-height: var(--navbar-h);
+
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .nav-link {
+        font-size: 0.72rem;
+
+        padding: 6px 10px;
+
+        letter-spacing: 0.4px;
+    }
+
+    section {
+        padding: 90px 5% 60px;
+
+        min-height: auto;
+    }
+
+    .hero-section {
+        padding-top: 80px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.45rem;
+
+        margin-bottom: 24px;
+    }
+
+    .glass-card {
+        padding: 26px 20px;
+
+        border-radius: 16px;
+    }
+
+    .grid-container {
+        gap: 16px;
+    }
+
+    .grid-container .glass-card {
+        max-width: 100%;
+
+        flex: 1 1 100%;
+    }
+
+    .btn {
+        padding: 11px 24px;
+
+        font-size: 0.9rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    input,
+    textarea {
+        font-size: 0.92rem;
+
+        padding: 13px 15px;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE
+   ============================================================ */
+@media (max-width: 400px) {
+
+    .nav-link {
+        font-size: 0.66rem;
+
+        padding: 5px 8px;
+    }
+
+    h1 {
+        font-size: 1.65rem;
+    }
+}
